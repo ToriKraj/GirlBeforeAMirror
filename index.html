@@ -1,0 +1,153 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>"Girl Before a Mirror"</title> 
+        <meta name="Simulated 3D environment using Aframe with Picasso's 'Girl Before a Mirror' work." content="3D 'Girl Before a Mirror'"> 
+        <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script> 
+    </head> 
+    
+    <body>
+        <a-scene>
+          <!-- ASSETS -->
+          <a-assets>
+          <!-- Downloaded Assets from SketchFab -->
+            <a-asset-item id="mirror" src="DownloadedModels/Mirror/scene.gltf"></a-asset-item>
+            <a-asset-item id="pictureframe" src="DownloadedModels/picture_frame/scene.gltf"></a-asset-item>
+            <!-- Images I edited of Picasso's Work --> 
+            <img id="background" src="ModifiedGirlImages/Background.png" roughness="1">
+            <img id="mirrorgirl" src="ModifiedGirlImages/GirlInMirror2.png" roughness="0"> 
+            <img id="girlbeforemirror" src="ModifiedGirlImages/GirlBeforeAMirror.png" roughness="1"> 
+            <img id="painting" src="ModifiedGirlImages/GirlBeforeAMirror2.jpg"> 
+            <!-- Public Domain Images from the Web --> 
+            <img id="woodfloor" src="PublicDomainImages/WoodFloor.jpg">
+          </a-assets>
+            
+          <!-- ENTITIES --> 
+          <!-- MODELS -->
+          <a-gltf-model src="#mirror" 
+                        position="-17 12 120" 
+                        rotation="0 135 0" 
+                        scale=".22 .2 .2">
+          </a-gltf-model>
+          <a-gltf-model src="#pictureframe"
+                        position="152 -120 90"
+                        rotation="0 180 0"
+                        scale="100 100 100"> 
+                        <a-image id="paintinginframe"
+                                 material="src: #painting"
+                                 position="0.045 1.650 0"
+                                 rotation="0 90 0"
+                                 scale="0.75 1 0.75"> </a-image>
+          </a-gltf-model>
+            
+          <!-- Animations -->
+          <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
+            
+          <!-- GIRL --> 
+          <a-image id="GirlInMirror"
+                    width="60" 
+                    height="85"
+                    material="src: #mirrorgirl; transparent: true; opacity: 0.5"
+                    position="0 14 123"
+                    rotation="-7 145 0"
+                    animation__mouseenter="property: components.material.material.opacity; type: opacity; from: 0; to: 1; startEvents: mouseenter; dur: 1500"
+                    animation__mouseleave="property: components.material.material.opacity; type: opacity; from: 1; to: 0; startEvents: mouseleave; dur: 12500">
+          </a-image>
+          <a-image id="GirlBeforeMirror"
+                    width="65" 
+                    height="105"
+                    material="src: #girlbeforemirror"
+                    position="90 9 0"
+                    rotation="0 135 0">
+          </a-image>
+            
+
+          <!-- WALLS -->
+          <a-entity id="WallFront" 
+                    geometry="primitive: plane; width: 250; height: 200" 
+                    material= "color: white;"
+                    position="47 50 -50"
+                    rotation="0 0 0"> 
+                    <!-- TEXT ON WALLS --> 
+                    <a-entity position="125 70 1"
+                              text="color: black; align: left; width: 350; font: exo2semibold; value: 'Girl Before a Mirror'">
+                    </a-entity>
+                    <a-entity position="133 50 1"
+                              text="color: black; align: left; width: 250; font: kelsonsans; value: -Pablo Picasso">
+                    </a-entity>
+                    <a-entity position="76 41 1"
+                              text="color: black; align: left; width: 50; font: kelsonsans; value: Room by Tori Kraj September 2019">
+                    </a-entity>
+          </a-entity>
+            
+          <a-entity id="WallBack" 
+                    geometry="primitive: plane; width: 250; height: 200" 
+                    material= "src: #background;"
+                    position="25 50 150"
+                    rotation="0 180 0">
+          </a-entity> 
+            
+          <a-entity id="WallLeft" 
+                    geometry="primitive: plane; width: 250; height: 200" 
+                    material= "src: #background;"
+                    position="-50 50 55"
+                    rotation="0 90 180">
+          </a-entity>
+            
+          <a-entity id="WallRight" 
+                    geometry="primitive: plane; width: 250; height: 200" 
+                    material= "src: #background;"
+                    position="150 50 25"
+                    rotation="0 270 0">
+          </a-entity> 
+            
+            
+          <!-- FLOOR --> 
+          <a-entity id="Floor" 
+                    geometry="primitive: plane; width: 250; height: 200" 
+                    material= "src: #woodfloor; roughness: 1"
+                    position="47 -40 50"
+                    rotation="270 0 180">
+          </a-entity> 
+            
+            
+          <!-- CEILING --> 
+          <a-entity id="Ceiling" 
+                    geometry="primitive: plane; width: 250; height: 200" 
+                    material= "src: #background; roughness: 1"
+                    position="47 150 50"
+                    rotation="90 0 180">
+          </a-entity> 
+          
+          <!-- CAMERA --> 
+          <a-camera position="80 35 80"></a-camera>
+            
+            
+          <!-- LIGHTING -->
+          <a-light type="point" 
+                   color="red" 
+                   position="150 1 0"
+                   intensity="0.3"
+                   decay="5">
+          </a-light>
+          <a-light type="point" 
+                   color="green" 
+                   position="10 15 150"
+                   intensity="0.4"
+                   decay="5">
+          </a-light>
+
+          <a-light 
+                   type="point" 
+                   color="white" 
+                   position="0 5 0"
+                   intensity="0.6"
+                   decay="2">
+          </a-light>
+
+          <a-light type="ambient" color="#898A89"></a-light>
+        
+        </a-scene>
+        
+    </body>
+</html> 
