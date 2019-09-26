@@ -9,3 +9,5 @@ The idea was to be able to fully immerse yourself in this world by being able to
 girl appear by a mouse hover. Her hand in the painting is connected to the original girl's, which is a link I wanted to keep, hence 
 the reflected girl's hand appears to be coming out of the mirror in an attempt to reach you. This shows the linkage between 
 individuals and their perception of reality. 
+
+![Image of VR Environment](https://raw.githubusercontent.com/ToriKraj/GirlBeforeAMirror/master/ReadMePicture.PNG)
