@@ -1,4 +1,4 @@
-# GirlBeforeAMirror
+# "Girl Before a Mirror"
 Using Pablo Picasso's piece, "Girl Before a Mirror," I created a virtual environment around the ideas in the painting using A-Frame. 
 
 The walls were remade in Adobe Illustrator to match the painting, but have the quality necessary for the 3D environment. The 
