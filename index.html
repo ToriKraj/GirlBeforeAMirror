@@ -120,7 +120,9 @@
           </a-entity> 
           
           <!-- CAMERA --> 
-          <a-camera position="80 35 80"></a-camera>
+          <a-entity id="cameramovement" movement-controls="fly: true; speed: 3.5">
+                <a-camera position="80 35 80" look-controls></a-camera>
+          </a-entity>
             
             
           <!-- LIGHTING -->
